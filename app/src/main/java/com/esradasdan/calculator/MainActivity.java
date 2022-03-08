@@ -172,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void one(View view) {
         char letter='1';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
 
@@ -182,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void two(View view) {
         char letter='2';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -191,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void three(View view) {
         char letter='3';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -200,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void four(View view) {
         char letter='4';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -210,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void five(View view) {
         char letter='5';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -219,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void six(View view) {
         char letter='6';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -228,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void seven(View view) {
         char letter='7';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -238,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void eight(View view) {
         char letter='8';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -247,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void nine(View view) {
         char letter='9';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
         mystring+=letter;
         text1.setText(mystring);
         String strresult=String.valueOf(func(mystring));
@@ -258,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void zero(View view) {
         char letter='0';
+        if(mystring=="Infinity"|| mystring=="-Infinity") mystring="";
 
         if(mystring.length()==0) {
             mystring+="0.";

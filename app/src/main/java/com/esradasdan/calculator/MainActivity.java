@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +50,31 @@ public class MainActivity extends AppCompatActivity {
         }
         String e="";
         for (;k<s.length();k++) {e+=s.charAt(k); } list.add(e);
+        System.out.println(list);
+
+        if(list.size()>1) {
+            if(list.get(0).equals("")){
+                list.remove(0);
+            }
+
+
+            if(list.get(0).equals("-")) {
+                String second=list.get(1);
+                String x="-";
+                x+=second;
+                list.remove(0);
+                System.out.println("REMOVE SNRA");
+                System.out.println(list);
+
+                list.set(0,x);
+                System.out.println("SET SONRA");
+                System.out.println(list);
+
+            }
+        }
+
+
+
         return calc(list);
 
     }
@@ -119,7 +145,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-
+        if (list.get(0).equals("Infinity") || list.get(0).equals("-Infinity")){
+            mystring = "";
+        }
         return Double.parseDouble(list.get(0));
 
 
@@ -231,9 +259,12 @@ public class MainActivity extends AppCompatActivity {
     public void zero(View view) {
         char letter='0';
 
-        if(mystring.length()==0) {text2.setText("0 ile başlayamaz");}
+        if(mystring.length()==0) {
+            mystring+="0.";
+            text1.setText(mystring);}
         else if (mystring.charAt(mystring.length() - 1) == '/') {
-            text2.setText("O'a bölme hatası");
+            mystring+="0.";
+            text1.setText(mystring);
         }
 
         else {
@@ -253,6 +284,10 @@ public class MainActivity extends AppCompatActivity {
         if(mystring.length()==0) {text2.setText("Virgül ile ile başlayamaz");}
         else if (mystring.charAt(mystring.length() - 1) == '/' || mystring.charAt(mystring.length() - 1)=='+' || mystring.charAt(mystring.length() - 1) =='*' || mystring.charAt(mystring.length() - 1)=='-') {
             text2.setText("Nokta koymadan önce bir sayı giriniz");
+        }
+
+        else if(mystring.charAt(mystring.length()-1)=='.') {
+
         }
 
         else {
@@ -299,7 +334,8 @@ public class MainActivity extends AppCompatActivity {
         int a=0;
 
         if(mystring.length()==0) {  //boşsa
-            text2.setText("İşlem operatör ile başlayamaz");
+            mystring += '-';
+            text1.setText("-");
             a=1;
         }
 
@@ -389,6 +425,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void delete(View view) {
+        if(mystring.equals("Infinity") || mystring.equals("-Infinity")) {
+            mystring="";
+        }
         if(mystring.length()!=0) mystring=mystring.substring(0, mystring.length()-1);
         text1.setText(mystring);
     }
